@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>  
+
+    <style>
+        html {
+          scroll-behavior: smooth;
+        }
+
+        * {
+          box-sizing:border-box;
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+          position: relative;
+          margin: auto;
+        }
+
+        /* Hide the images by default */
+        .mySlides {
+          display: none;
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+          cursor: pointer;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          padding: 20px;
+          width: auto;
+          color: black;
+          font-size: 18px;
+          transition: 0.6s ease;
+          background-color: white;
+        }
+
+        .prev {
+          margin-right: 64px;
+        }
+
+        .prev:hover, .next:hover {
+          background-color: lightgray;
+        }
+
+
+        /* Fading animation */
+        .fade {
+          animation-name: fade;
+          animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+          from {opacity: .4}
+          to {opacity: 1}
+        }
+
+        .drop-down {
+          margin-right: 24px ;
+        }          
+        
+        .sub-menu {
+          	padding: 0;
+          	margin: 0;
+          	list-style-type: none;
+            display: none;
+        }
+
+        .sub-menu li a {
+          border: 1px solid black;
+          border-radius: 12px;
+          padding: 4px;
+        }
+
+        .sub-menu li a:hover {
+          background-color: lightgray;
+        }
+
+        .drop-down:hover .sub-menu {
+            display: block;
+            position: absolute;
+            top: 24px;
+            right: 484px;
+        }
+
+        .drop-down:hover a svg {
+          transition: 0.5s;
+          transform: rotate(90deg);
+        }
+
+        .container {
+          width: 1400px;
+          margin:0;
+          columns: 3;
+          column-gap: 20px;
+          -webkit-mask-image: linear-gradient(#DCC1AB , rgba(0,0,0,0));
+          mask-image: linear-gradient(#DCC1AB , rgba(0,0,0,0));
+        }
+
+        .container .box {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+
+        .container .box img {
+          max-width: 100%;
+          object-fit: contain;
+        }
+
+        #icon {
+         animation: fadeInLeft ease-in-out 1.5s;
+        }
+        #info {
+         animation: fadeInRight ease-in-out 1.5s;
+        }
+        #intro-left {
+         animation: fadeInLeft ease-in-out 1.5s;
+        }
+         #intro-right {
+         animation: fadeInRight ease-in-out 1.5s;
+        }
+        
+        @keyframes fadeInLeft {
+          0% {
+              transform: translateX(-1000px);
+          }
+          100% {
+              transform: translateX(0);
+          }
+        } 
+
+        @keyframes fadeInRight {
+          0% {
+              transform: translateX(1000px);
+          }
+          100% {
+              transform: translateX(0);
+          }
+        } 
+
+    </style>
+  </head>
+  <body>
+    <!-- all content -->
+    <div >
+
+
+      <!-- Navbar -->
+      <nav id="navbar" class="flex flex-row justify-between">
+        <div id="icon" class="pl-16 py-6">
+          <a href=""><h1><span class="font-bold">glard</span>design</h1></a>
+        </div>
+
+        <div id="info" class="flex flex-row py-6 justify-end items-end">
+          <ul class="flex flex-row pl-10">
+            <li class="drop-down">
+              <a class="flex flex-row hover:text-green-800" href="#">
+                Oferta
+                <svg
+                  class="w-6"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    fill-rule="evenodd"
+                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                  ></path>
+                </svg>
+              </a>
+              <ul class="sub-menu">
+                <li><a href="#">Przycinanie krzaków</a></li>
+            </ul>
+            </li>
+
+            <li class="mr-10 hover:text-green-800">
+              <a href="#projects">O firmie</a>
+            </li>
+
+            <li class="mr-10 hover:text-green-800">
+              <a href="#realisation">Realizacja</a>
+            </li>
+
+            <li class="mr-10 hover:text-green-800">
+              <a href="#contact">Kontakt</a>
+            </li>
+
+            <li class="mr-16">
+              <a href="#">
+                <svg
+                  class="w-6"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    fill-rule="evenodd"
+                    d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+
+      <!-- Intro -->
+      <div id="intro" class="flex flex-row justify-between w-fit h-fit">
+        <div id="examples"></div>
+        <!-- Left side -->
+        <div
+          id="intro-left"
+          style="background-color: #dcc1ab"
+          class="flex flex-1 flex-col justify-center items-start p-16 h-full"
+        >
+          <h1 class="text-6xl mb-8">
+            Nowoczesna<br />
+            aranżacja <br />
+            Twojego ogrodu
+          </h1>
+          <div class="my-6 mr-64">
+            Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka
+            realizacji. Oferujemy kompleksowy zakres usług indywidualnym
+            podejściem do każdego projektu.
+          </div>
+
+          <div class="flex justify-center items-center mt-8">
+            <a href="#contact">
+              <button
+                class="h-12 w-44 mr-8 p-3 bg-green-800 text-white text-sm rounded-3xl border border-black hover:bg-transparent hover:text-green-800 hover:border-green-800"
+              >
+                Skontaktuj się z nami
+              </button>
+            </a>
+
+            <a href="#realisation">
+              <button
+                class="h-12 w-64 p-3 flex justify-center items-center rounded-3xl border text-green-800 border-green-800 hover:bg-green-800 hover:text-white hover:border-black "
+              >
+                Zobacz nasze reaclizacje
+
+                <svg
+                  class="w-7 p-0.5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    fill-rule="evenodd"
+                    d="M10 3a.75.75 0 01.75.75v10.638l3.96-4.158a.75.75 0 111.08 1.04l-5.25 5.5a.75.75 0 01-1.08 0l-5.25-5.5a.75.75 0 111.08-1.04l3.96 4.158V3.75A.75.75 0 0110 3z"
+                  ></path>
+                </svg>
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right side -->
+        <div id="intro-right" class="flex flex-2 flex-col">
+          <div class="slideshow-container">
+
+            <div class="mySlides fade">
+              <img src="https://c4.wallpaperflare.com/wallpaper/983/472/24/man-made-garden-arch-green-wallpaper-preview.jpg" style="width:100%">
+            </div>
+          
+            <div class="mySlides fade">
+              <img src="https://img.tourister.ru/files/3/3/5/2/0/8/0/9/7/clones/728_546_fixedwidth.jpeg?t=1691971200062" style="width:100%">
+            </div>
+          
+            <div class="mySlides fade">
+              <img src="https://cdn.wallpapersafari.com/54/47/0PLK3Q.jpg" style="width:100%">
+            </div>
+          
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">
+                <svg
+                class="w-6"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  clip-rule="evenodd"
+                  fill-rule="evenodd"
+                  d="M18 10a.75.75 0 01-.75.75H4.66l2.1 1.95a.75.75 0 11-1.02 1.1l-3.5-3.25a.75.75 0 010-1.1l3.5-3.25a.75.75 0 111.02 1.1l-2.1 1.95h12.59A.75.75 0 0118 10z"
+                ></path>
+              </svg>
+            </a>
+            <a class="next" onclick="plusSlides(1)">
+              <svg
+                  class="w-6"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    fill-rule="evenodd"
+                    d="M2 10a.75.75 0 01.75-.75h12.59l-2.1-1.95a.75.75 0 111.02-1.1l3.5 3.25a.75.75 0 010 1.1l-3.5 3.25a.75.75 0 11-1.02-1.1l2.1-1.95H2.75A.75.75 0 012 10z"
+                  ></path>
+                </svg>
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Oferta -->
+        <div style="background-color: #F5F0EC;" class="flex flex-col pl-16 py-12 ">
+          <div style="margin-bottom: 120px;">
+            <div class="flex flex-col justify-start items-start text-left pl-16 py-6" >
+              <div class="pl-16 py-6 text-green-800 text-sm">
+                Oferta
+              </div>
+              <h1 class="pl-16 py-6 font-semibold text-6xl">
+                Działamy kompleksowo
+              </h1>
+              <div class="pl-16 py-6 text-lg">
+                Oferujemy kompletną obsługę inwestycji terenów zielonych. Projektujemy nowoczesne ogrody <br/> przydomowe oraz rezydencjonalne. Stworzymy dla Ciebie projekt, zwizualizujemy go i wcielimy <br/> w życie, a na każdym etapie posłużymy radą i wieloletnim doświadczeniem. 
+              </div>
+            </div>
+            
+            <div>
+
+              <div>
+                <ul style="padding: 50px;" class="flex flex-row justify-between items-start">
+
+                  <li id="block-banner-left" style="margin: 10px; border-radius: 20px;" class="p-12 border bg-white hover:bg-green-800 hover:text-white">
+                    <svg class="w-12" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M2.695 14.763l-1.262 3.154a.5.5 0 00.65.65l3.155-1.262a4 4 0 001.343-.885L17.5 5.5a2.121 2.121 0 00-3-3L3.58 13.42a4 4 0 00-.885 1.343z"></path>
+                    </svg>
+                    <h1 style="font-size: 24px; padding-bottom: 0px; padding-top: 20px;" class=" font-semibold text-xl">
+                      Projekty
+                    </h1>
+                    <div style="width: 290px; height: 100px; " >
+                      Zaprojektujemy Twój ogród w nowoczesnym stylu i z najlepszym wykorzystaniem istniejącej przestrzeni.
+                    </div>
+                    <a style="padding-top: 40px ;" class="flex flex-row justify-start items-start text-lg "  href="#projects">
+                      <div style="text-decoration: underline; text-underline-offset: 6px;" class="flex flex-row hover:text-black">
+                        Dowiedz się więcej
+                        <svg class="w-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path clip-rule="evenodd" fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"></path>
+                        </svg>
+                      </div>
+                    </a>
+                  </li>
+
+                  <li id="block-banner-up" style="margin: 10px; border-radius: 20px; padding: 50px;" class="p-12 border bg-white py-6 hover:bg-green-800 hover:text-white"">
+                    <svg class="w-12" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"></path>
+                      <path clip-rule="evenodd" fill-rule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                    <h1 style="font-size: 24px; padding-bottom: 0px; padding-top: 20px;" class="py-6 font-semibold text-xl">
+                      Wizualizacje
+                    </h1>
+                    <div style="width: 290px; height: 100px;" class="p-6">
+                      Przedstawimy Ci projekty koncepcyjne w postaci  wirtualnego spaceru animowanego  w technologii 3D.
+                    </div>
+                    <a style="padding-top: 40px ;" class="flex flex-row justify-start items-start text-lg "  href="#examples">
+                      <div style="text-decoration: underline; text-underline-offset: 6px;" class="flex flex-row hover:text-black">
+                        Dowiedz się więcej
+                        <svg class="w-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path clip-rule="evenodd" fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"></path>
+                        </svg>
+                      </div>
+                    </a>
+                  </li>
+
+                  <li id="block-banner-right" style="margin: 10px; border-radius: 20px;" class="p-12 border bg-white hover:bg-green-800 hover:text-white">
+                    <svg class="w-12" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M15.98 1.804a1 1 0 00-1.96 0l-.24 1.192a1 1 0 01-.784.785l-1.192.238a1 1 0 000 1.962l1.192.238a1 1 0 01.785.785l.238 1.192a1 1 0 001.962 0l.238-1.192a1 1 0 01.785-.785l1.192-.238a1 1 0 000-1.962l-1.192-.238a1 1 0 01-.785-.785l-.238-1.192zM6.949 5.684a1 1 0 00-1.898 0l-.683 2.051a1 1 0 01-.633.633l-2.051.683a1 1 0 000 1.898l2.051.684a1 1 0 01.633.632l.683 2.051a1 1 0 001.898 0l.683-2.051a1 1 0 01.633-.633l2.051-.683a1 1 0 000-1.898l-2.051-.683a1 1 0 01-.633-.633L6.95 5.684zM13.949 13.684a1 1 0 00-1.898 0l-.184.551a1 1 0 01-.632.633l-.551.183a1 1 0 000 1.898l.551.183a1 1 0 01.633.633l.183.551a1 1 0 001.898 0l.184-.551a1 1 0 01.632-.633l.551-.183a1 1 0 000-1.898l-.551-.184a1 1 0 01-.633-.632l-.183-.551z"></path>
+                    </svg>
+                    <h1 style="font-size: 24px; padding-bottom: 0px; padding-top: 20px;" class="py-6 font-semibold text-xl">
+                      Realizacje
+                    </h1>
+                    <div style="width: 290px; height: 100px;" class="p-6">
+                      Zrealizujemy Twoje marzenie przy użyciu  najnowszych rozwiązań i zaawansowanych technologii.
+                    </div>
+                    <a style="padding-top: 40px ;" class="flex flex-row justify-start items-start text-lg "  href="#realisation">
+                      <div style="text-decoration: underline; text-underline-offset: 10px;" class="flex flex-row hover:text-black">
+                        Dowiedz się więcej
+                        <svg class="w-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path clip-rule="evenodd" fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"></path>
+                        </svg>
+                      </div>
+                    </a>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- O firmie -->
+        <div id="projects"></div>
+        <div style="height: 546px; background-color: #1B5B31;" class="flex flex-row items-center">
+          
+            <!-- Left side -->
+            <div id="block-banner-left">
+              <img class="w-full h-full"  src="https://shesavesshetravels.com/wp-content/uploads/2023/06/7-days-in-costa-rica-728x546.jpg.webp"/>
+            </div>
+
+            <!-- Right side-->
+            <div class="pl-16 py-6 text-white">
+              <div class="pl-16 py-6">
+                <div id="block-banner-left" class="py-6 text-sm">O firmie</div>
+                <h1 id="block-banner-right" style=" padding-bottom: 40px; padding-top: 10px;" class="py-6 font-semibold text-6xl">Tworzymy <br/> z pasją</h1>
+                <div id="block-banner-right" style="padding-bottom: 40px;" class="py-6 text-sm">
+                  Każdy projekt to nowe wyzwanie. Dlatego nasz zespół tworzą <br/> wykwalifikowani projektanci oraz architekci, których zadaniem jest <br/> rozpoznanie i realizacja potrzeb każdego Klienta. Nasza<br/> specjalizacja to przestrzenie nowoczesne, które charakteryzuje<br/> minimalizm, geometria i elegancka prostota. Tworzymy ogrody<br/>małoobsługowe, dostosowane do współczesnego trybu życia.
+                </div>
+                <a id="block-banner-left"  class="flex flex-row justify-start items-center" href="https://www.instagram.com/adrespect/" target="_blank">
+                  <div style="border: 1px solid white; border-radius: 36px; padding: 14px 14px;" class="flex flex-row hover:bg-white hover:text-green-800"> 
+                    Poznaj nas bliżej
+                    <svg class="w-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path clip-rule="evenodd" fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"></path>
+                    </svg>
+                  </div>
+                </a>
+              </div>
+            </div>
+        </div>
+
+
+        <!-- Realizacja -->
+        <div id="realisation"></div>
+        <div style="background-color: #DCC1AB; ">
+
+          <div class="pl-16 py-6">
+            <div id="block-banner-right" style="padding-top: 80px;" class="pl-16 text-sm text-green-800">
+              Realizacja
+            </div>
+            <h1 id="block-banner-left"  style="font-size: 36px; padding-bottom: 60px;" class="pl-16 font-semibold">
+              Nasze projekty
+            </h1>
+            <div class="container">
+                <div class="box"><img src="https://c4.wallpaperflare.com/wallpaper/488/724/1020/home-garden-lawn-green-grassfield-wallpaper-preview.jpg"/></div>
+                <div class="box"><img src="https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/regions/hampshire/places/mottisfont/library/summer/1326238-rose-veilchenblau-on-arch-in-the-rose-garden-in-june-at-mottisfont-hampshire.jpg"/></div>
+                <div class="box"><img src="https://hips.hearstapps.com/hmg-prod/images/claude-monets-house-and-gardens-in-giverny-france-news-photo-1042013294-1562610151.jpg?crop=1.00xw:0.753xh;0,0.0671xh&resize=1200:*"/></div>
+                <div class="box"><img src="https://m.media-amazon.com/images/I/81wVdPcj2hL.png"/></div>
+                <div class="box"><img src="https://www.ugaoo.com/cdn/shop/articles/shutterstock_651730000.jpg?v=1661883506"/></div>
+                <div class="box"><img src="https://images.unsplash.com/photo-1605895370326-e96b9d52e3f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zmxvd2VyJTIwZ2FyZGVufGVufDB8fDB8fHww&w=1000&q=80"/></div>
+                <div class="box"><img src="https://cdn.pixabay.com/photo/2012/08/06/00/53/bridge-53769_1280.jpg"/></div>
+                <div class="box"><img src="https://learnenglish.britishcouncil.org/sites/podcasts/files/RS4956_182230177-low_0.jpg"/></div>
+                <div class="box"><img src="https://hips.hearstapps.com/hmg-prod/images/edc050120toolbox-roselli01-1590587738.jpg"/></div>
+                <div class="box"><img src="https://d1whtlypfis84e.cloudfront.net/guides/wp-content/uploads/2019/08/09091722/Garden-1024x682.jpg"/></div>
+                <div class="box"><img src="https://assets.architecturaldigest.in/photos/622268cae66a108a6c6e5fa7/4:3/w_1440,h_1080,c_limit/12%20beautiful%20architectural%20gardens%20around%20the%20world%20.jpg"/></div>
+                <div class="box"><img src="https://hips.hearstapps.com/housebeautiful/assets/15/16/1429205581-54eb668fa6f46_-_09-take-it-outside-archway-0414-s2.jpg"/></div>
+                <div class="box"><img src="https://cdn.britannica.com/42/91642-050-332E5C66/Keukenhof-Gardens-Lisse-Netherlands.jpg"/></div>
+            </div>
+
+            <div style="margin-left: 660px;">
+              <button style="margin-top: 30px;border: 1px solid black; border-radius: 36px; padding: 10px;" class="flex flex-row hover:text-green-800" onClick="showOrHide()">
+                <div id="openclose" >Rozwiń</div>
+                <svg class="w-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path id="arrow" clip-rule="evenodd" fill-rule="evenodd" d="M10 3a.75.75 0 01.75.75v10.638l3.96-4.158a.75.75 0 111.08 1.04l-5.25 5.5a.75.75 0 01-1.08 0l-5.25-5.5a.75.75 0 111.08-1.04l3.96 4.158V3.75A.75.75 0 0110 3z"></path>
+                </svg>
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Contact -->
+        <div id="contact"></div>
+        <div style="height: 600px;" class="bg-white flex justify-center items-center">
+
+          <div id="shakey" style="width: 1000px; height: 400px;" class="bg-green-800 flex text-white flex flex-row justify-start items-center">
+            
+            <div style="font-size: 36px; padding-left: 150px;" class="flex-2">
+              Zostańmy w kontakcie! <br/> Znajdziesz nas na <span class="font-semibold">Instagramie.</span>
+            </div>
+
+            <div style="padding-left: 100px;" class="flex flex-col flex-1 justify-center items-start py-6">
+              <div class="text-sm">
+                Śledź nasze <br/> najnowsze realizacje!
+              </div>
+              <button style="border: 1px solid white; border-radius: 36px; padding: 8px 16px; margin-top: 14px;" class="bg-white text-green-800 flex justify-center items-center">
+                <a target="_blank" href="https://www.instagram.com/adrespect/" class="text-sm hover:text-black">Instagram</a>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="height: 600px; background-color: black;" class="flex flex-col justify-start items-center">
+
+          <div class="text-white" style="width: 1000px; margin-top: 150px;">
+
+            <div class="flex flex-row justify-between">
+              <div class="flex justify-center items-center">
+                <h1><span class="font-bold">glard</span>design</h1>
+              </div>
+              <div class="flex flex-row justify-center items-center">
+                <div>Daj znać , co możemy zrobić dla ciebie!</div>
+                <button style="border: 1px solid black ; border-radius: 36px ;margin-left: 10px; padding: 10px 14px;" class="text-white bg-green-800 flex justify-center items-center hover:bg-white hover:text-green-800">
+                  <a href="">Skontaktuj się z nami</a>
+                </button>
+              </div>
+            </div>
+
+            <hr style="margin: 80px auto" size="8" width="100%" color="white">
+
+            <div>
+
+              <div>
+                <div style="margin-bottom: 120px;" class="flex flex-row justify-between">
+                  <ul class="flex flex-row text-sm">
+                    <li><a href="#" target="_blank">Kontakt</a></li>
+                    <li class="pl-6"><a href="#" target="_blank">Instagram</a></li>
+                    <li class="pl-6"><a href="#" target="_blank">Facebook</a></li>
+                    <li class="pl-6"><a href="#" target="_blank">LinkedIn</a></li>
+                  </ul>
+
+                  <div>
+                    <ul class="flex flex-row text-sm">
+                      <li>000-000-000</li>
+                      <li class="pl-16">giarddesign@kontakt.pl</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="flex flex-row justify-between">
+                  <div>Prawa zastrzeżone © 2022</div>
+                  <div class="flex flex-row ">made by 
+                    <img
+                     class="w-6"
+                     src="https://media.licdn.com/dms/image/C4E0BAQE0Flo38Wp2sg/company-logo_200_200/0/1648814513469?e=2147483647&v=beta&t=ZHo58qneAGDOs6I8PPBLkCb7QA_MLxt5uqgCCo7Uh4s"
+                     />
+                     <span class="font-bold">ad</span>Respect</div>
+                </div>
+              </div>
+
+              <div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    
+    <script> 
+
+      // Code for library effect
+      let slideIndex = 1;
+      showSlides(slideIndex);
+      
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+        }
+        slides[slideIndex-1].style.display = "block";  
+      }
+
+
+      //Show and hide effect
+        const container = document.querySelector('.container');
+        const btn = document.getElementById('openclose');
+        let isClicked = true;
+        let arrow = document.getElementById('arrow');
+
+        let showOrHide = function () {
+          if(isClicked) {
+            container.setAttribute("style", "-webkit-mask-image: none");  
+            isClicked = false;
+            btn.textContent = 'Zamkni';
+            arrow.setAttribute("d", "M10 17a.75.75 0 01-.75-.75V5.612L5.29 9.77a.75.75 0 01-1.08-1.04l5.25-5.5a.75.75 0 011.08 0l5.25 5.5a.75.75 0 11-1.08 1.04l-3.96-4.158V16.25A.75.75 0 0110 17z  ")
+          } else {
+            container.setAttribute("style", "-webkit-mask-image: linear-gradient(#DCC1AB , rgba(0,0,0,0));");  
+            isClicked = true;
+            btn.innerHTML = 'Rozwń';
+            arrow.setAttribute("d", "M10 3a.75.75 0 01.75.75v10.638l3.96-4.158a.75.75 0 111.08 1.04l-5.25 5.5a.75.75 0 01-1.08 0l-5.25-5.5a.75.75 0 111.08-1.04l3.96 4.158V3.75A.75.75 0 0110 3z")
+          }
+          
+        }
+
+
+        //Animation for blocks
+        const animatedleft = document.querySelectorAll('#block-banner-left'); 
+        observer = new IntersectionObserver((entries) => 
+        { 
+          entries.forEach(entry => { 
+            if(entry.intersectionRatio > 0) { 
+              entry.target.style.animation = 'fadeInLeft 1.5s forwards ease-in-out'; 
+            } 
+          }) 
+        }) 
+        animatedleft.forEach(e => { 
+          observer.observe(e) 
+        })   
+
+        const animatedright = document.querySelectorAll('#block-banner-right'); 
+        observer = new IntersectionObserver((entries) => 
+        { 
+          entries.forEach(entry => { 
+            if(entry.intersectionRatio > 0) { 
+              entry.target.style.animation = 'fadeInRight 1.5s forwards ease-in-out'; 
+            } 
+          }) 
+        }) 
+        animatedright.forEach(e => { 
+          observer.observe(e) 
+        })  
+
+        const animatedup = document.querySelectorAll('#block-banner-up'); 
+        observer = new IntersectionObserver((entries) => 
+        { 
+          entries.forEach(entry => { 
+            if(entry.intersectionRatio > 0) { 
+              entry.target.style.animation = 'fadeInUp 1.5s forwards ease-in-out'; 
+            } 
+          }) 
+        }) 
+        animatedup.forEach(e => { 
+          observer.observe(e) 
+        })  
+
+        const animatedshake = document.querySelectorAll('#shakey'); 
+        observer = new IntersectionObserver((entries) => 
+        { 
+          entries.forEach(entry => { 
+            if(entry.intersectionRatio > 0) { 
+              entry.target.style.animation = 'shakeY 1.5s forwards ease-in-out'; 
+            } 
+          }) 
+        }) 
+        animatedshake.forEach(e => { 
+          observer.observe(e) 
+        }) 
+      </script>
+  </body>
+</html>
